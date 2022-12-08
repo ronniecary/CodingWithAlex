@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments</title>
+    <script src="https://www.cssscript.com/demo/confetti-falling-animation/confetti.js"></script>
+    <script type="text/javascript">
+        function areAssignmentsDone() {
+            var checkboxes = document.getElementById("assignments-form").elements;
+            for (var i = 0; i < checkboxes.length; i++) {
+                if (!checkboxes[i].checked) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function fun() {
+            if (areAssignmentsDone()) {
+                startConfetti()
+            } else {
+                stopConfetti()
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Here is where your assignments will be</h1>
+    <form action="fun()" id="assignments-form">
+        <input type="checkbox" id="assignment1" name="assignment1" onclick="fun()">
+        <label for="assignment1">Create a homepage "index.html"</label><br>
+        <input type="checkbox" id="assignment2" name="assigment2" onclick="fun()">
+        <label for="assignment2">The homepage should link to all your other web pages (including this one) and the other web pages should link back to the homepage</label><br>
+        <input type="checkbox" id="assignment3" name="assigment3" onclick="fun()">
+        <label for="assignment3">Get rid of absolute paths and convert them all to relative paths</label><br>
+        <input type="checkbox" id="assignment4" name="assigment4" onclick="fun()">
+        <label for="assignment4">Change any pictures that reference a local picture in your computer to ones that reference a picture already on the internet</label><br>
+    </form>
+    
+</body>
+
+</html>
